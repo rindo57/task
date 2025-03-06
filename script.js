@@ -130,5 +130,7 @@ app.delete('/tasks/:id', authenticateUser, async (req, res) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Start the server
+const PORT = process.env.PORT || 80;
+const HOST = '0.0.0.0'; // Add this line
+app.listen(PORT, HOST, () => console.log(`Server running on http://${HOST}:${PORT}`));
